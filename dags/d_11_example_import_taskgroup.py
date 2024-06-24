@@ -5,7 +5,6 @@ from airflow.utils.task_group import TaskGroup
 
 from tasks.test_tasks import do_something
 
-
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
@@ -37,7 +36,7 @@ def d_11_example_import_taskgroup():
 
     some_str = generate_some_str()
     result = do_something(some_str)
-    with TaskGroup(group_id='do_something_task_group') as do_something_task_group:
+    with TaskGroup(group_id="do_something_task_group") as do_something_task_group:
         # Dynamically create task instances for processing
         print_something_separately.expand(something=result)
 

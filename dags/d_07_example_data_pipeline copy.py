@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 import pandas as pd
 from airflow.decorators import dag, task
 
-
 # Default arguments for the DAG
 default_args = {
     "owner": "airflow",
@@ -15,6 +14,7 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
 }
 
+
 @dag(
     dag_id="d_07_example_data_pipeline",
     default_args=default_args,
@@ -22,7 +22,7 @@ default_args = {
     schedule_interval="* * * * *",
     start_date=datetime(2023, 1, 1),
     catchup=False,
-    tags=["example", "decorator"]  # Optional: Add tags for better filtering in the UI
+    tags=["example", "decorator"],  # Optional: Add tags for better filtering in the UI
 )
 def d_07_example_data_pipeline():
     @task
@@ -39,7 +39,7 @@ def d_07_example_data_pipeline():
     def t_concat(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
         print("Concating df1 and df2.")
         return pd.concat([df1, df2]).reset_index(drop=True)
-    
+
     @task
     def l_db1(df: pd.DataFrame) -> None:
         print("Loading df to db1.")
@@ -58,6 +58,7 @@ def d_07_example_data_pipeline():
     df = t_concat(df1, df2)
     l_db1(df)
     l_db2(df)
+
 
 # Instantiate the DAG
 d_07_example_data_pipeline()

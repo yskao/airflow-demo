@@ -1,0 +1,35 @@
+{
+  "conventionalCommits.scopes": [
+    "bigquery",
+    "sell_out",
+    "sell_through",
+    "dbt",
+    "dependency",
+    "dim",
+    "dwd",
+    "legacy",
+    "check_data",
+    "powerbi",
+    "temp",
+    "cdp",
+    "utils",
+    "surveycake",
+    "crawler",
+    "prefect",
+    "psi",
+    "ci/cd",
+    "nine-yi"
+  ],
+  "editor.tabSize": 4,
+  "editor.rulers": [
+    100
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.unusedImports": "never",
+      "source.organizeImports": "explicit"
+    }
+  }
+}

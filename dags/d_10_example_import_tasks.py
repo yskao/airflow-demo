@@ -1,10 +1,8 @@
-import random
 from datetime import datetime, timedelta
 
 from airflow.decorators import dag, task
 
 from tasks.test_tasks import do_something
-
 
 default_args = {
     "owner": "airflow",
