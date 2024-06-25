@@ -7,6 +7,8 @@ RUN apt-get update && \
 
 # RUN sed -i 's/MinProtocol = TLSv1\.2/MinProtocol = TLSv1/' /etc/ssl/openssl.cnf
 
+RUN echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 COPY requirements-dev.txt .
 
 RUN pip install --upgrade pip

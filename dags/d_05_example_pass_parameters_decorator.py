@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 
 from airflow.decorators import dag, task
 
-
 # Default arguments for the DAG
 default_args = {
     "owner": "airflow",
@@ -21,7 +20,7 @@ default_args = {
     schedule_interval="* * * * *",
     start_date=datetime(2023, 1, 1),
     catchup=False,
-    tags=["example", "decorator"]  # Optional: Add tags for better filtering in the UI
+    tags=["example", "decorator"],  # Optional: Add tags for better filtering in the UI
 )
 def d_05_example_pass_parameters_decorator():
     @task

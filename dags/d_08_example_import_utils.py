@@ -4,7 +4,6 @@ from airflow.decorators import dag, task
 
 from utils.testutils import testfunc
 
-
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
@@ -22,7 +21,7 @@ default_args = {
     schedule_interval="* * * * *",
     start_date=datetime(2023, 1, 1),
     catchup=False,
-    tags=["example", "decorator"]  # Optional: Add tags for better filtering in the UI
+    tags=["example", "decorator"],  # Optional: Add tags for better filtering in the UI
 )
 def d_08_example_import_utils():
     @task

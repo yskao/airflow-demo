@@ -1,5 +1,5 @@
 import pendulum
-from airflow.decorators import dag, task, bash_task
+from airflow.decorators import bash_task, dag, task
 
 
 # Define the DAG

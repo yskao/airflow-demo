@@ -5,7 +5,6 @@ from airflow.decorators import dag, task
 
 from utils.my_notifier import MyNotifier
 
-
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
@@ -25,7 +24,7 @@ default_args = {
     on_success_callback=MyNotifier(message="Success!"),
     on_failure_callback=MyNotifier(message="Failure!"),
     catchup=False,
-    tags=["example", "decorator"]  # Optional: Add tags for better filtering in the UI
+    tags=["example", "decorator"],  # Optional: Add tags for better filtering in the UI
 )
 def d_09_example_notification():
     @task

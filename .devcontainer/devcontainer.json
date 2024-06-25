@@ -12,7 +12,6 @@
         "charliermarsh.ruff",
         "shardulm94.trailing-spaces",
         "vivaxy.vscode-conventional-commits",
-        "shinichi-takii.sql-bigquery",
         "ms-toolsai.jupyter",
         "ms-python.black-formatter",
         "mhutchie.git-graph"
@@ -38,5 +37,6 @@
   "remoteEnv": {
     "PYTHONPATH": "/workspaces/airflow-demo"
   },
-  "runArgs": ["--name", "dev-${localEnv:USER}-${localEnv:USERNAME}-ds-flow", "--network=host"]
+  "postCreateCommand": "sh ./.devcontainer/postCreateCommand.sh",
+  "runArgs": ["--name", "dev-${localEnv:USER}-${localEnv:USERNAME}-airflow-demo", "--network=host"]
 }

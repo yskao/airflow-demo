@@ -9,8 +9,8 @@ def task1():
     return "Hello from Task 1!"
 
 def task2(**kwargs):
-    ti = kwargs['ti']
-    returned_value_from_task1 = ti.xcom_pull(task_ids='task1')
+    ti = kwargs["ti"]
+    returned_value_from_task1 = ti.xcom_pull(task_ids="task1")
     print("Running Task 2")
     print(f"Received from Task 1: {returned_value_from_task1}")
 
@@ -32,7 +32,7 @@ dag = DAG(
     description="An example DAG with Python operators",
     schedule_interval="* * * * *",
     start_date=datetime(2023, 1, 1),
-    catchup=False
+    catchup=False,
 )
 
 # Define the tasks
